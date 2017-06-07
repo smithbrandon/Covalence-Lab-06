@@ -10,8 +10,8 @@ for (var i=1; i<101;i++){
     var thing = Math.floor(Math.random() * 20);
     var h = document.createElement('h3');
     h.innerText = 'Accusation ' + i;
-    h.addEventListener('click', function(acc, per, pl, th){
-        alert("Accusation " + acc + ": I accuse " + people[per] + ", with the " + things[th] + " in the " + places[pl] + "!");
-    }.bind(null, i, person, place, thing));
+    h.addEventListener('click', function(per, pl, th){
+        alert("Accusation " + this + ": I accuse " + people[per] + ", with the " + things[th] + " in the " + places[pl] + "!");
+    }.bind(i, person, place, thing));
     document.getElementById('container').appendChild(h);
 }
